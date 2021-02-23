@@ -1,0 +1,123 @@
+.results section.results-section 
+{
+  box-sizing: border-box;
+}
+
+.results section.results-section--background-plain 
+{
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  padding: 49px 41px;
+  min-width: 410px;
+}
+
+.results section.results__popular h2 
+{
+  display: flex;
+  justify-content: space-between;
+}
+
+.results section.results__popular h2 i 
+{
+  color: black;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.results section.results__popular h2 i:hover,
+.results section.results__popular h2:focus-within i 
+{
+  opacity: 0.5;
+}
+
+.results section .results-section__show-more 
+{
+  margin-top: auto;
+  font-weight: bold;
+}
+
+.results section .results-section__show-more:hover,
+.results section .results-section__show-more:focus 
+{
+  text-decoration: underline;
+}
+
+/* Results section - Articles containers */
+
+section .articles-container 
+{
+  display: grid;
+  grid-gap: 1.75rem;
+}
+
+section.results__accommodation .articles-container 
+{
+  grid-template-columns: repeat(auto-fit, minmax(236px, 1fr));
+  margin-bottom: 35px;
+}
+
+section.results__popular .articles-container 
+{
+  flex-grow: 2;
+  grid-template-rows: repeat(3, minmax(145px, 100%));
+}
+
+section.results__popular article 
+{
+  min-height: 160px;
+}
+
+section.results__activities .articles-container 
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  grid-template-rows: repeat(2, 200px);
+  grid-auto-flow: dense;
+}
+
+section.results__activities article.article--highlighted 
+{
+  grid-row: span 2;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1090px) 
+{
+  .results section.results-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .results section.results-section--background-plain 
+  {
+    border-radius: unset;
+    min-width: unset;
+  }
+
+  .results section.results__accommodation .articles-container 
+  {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .results section.results__popular .articles-container 
+  {
+    grid-template-rows: repeat(auto-fit, 170px);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .results section.results__activities .articles-container 
+  {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: unset;
+  }
+
+  .results section.results__activities article 
+  {
+    height: 200px;
+  }
+
+  .results section.results__activities article.article--highlighted 
+  {
+    grid-row: span 1;
+  }
+}
